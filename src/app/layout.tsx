@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 
 import { fontRoboto } from '~/libs/fonts'
 
+import { Header } from '~/components/header'
+
 export const metadata: Metadata = {
   title: 'NLW Unite',
   description:
@@ -18,7 +20,11 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="pt-BR" className={fontRoboto.variable} suppressHydrationWarning>
       <body>
-        <>{children}</>
+        <div className="container flex flex-col gap-5 py-5">
+          <Header />
+
+          <>{children}</>
+        </div>
       </body>
     </html>
   )
